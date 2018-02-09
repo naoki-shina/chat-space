@@ -9,18 +9,21 @@
 - belongs_to :group
 - belongs_to :user
 
+- user:references
+- group:references
+
+
+
 
 ## usersTable
 |Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, foreign_key: true|
-|email|string|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
-|member_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many messages
 - has_many members
+- has_many groups, through: :members
+
+
 
 
 ##groupsTable
@@ -33,6 +36,7 @@
 ### Association
 - has_many members
 - has_many messages
+- has_many users, through: :members
 
 
 

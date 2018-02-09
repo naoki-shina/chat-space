@@ -9,14 +9,14 @@
 - belongs_to :group
 - belongs_to :user
 
-- user:references
-- group:references
-
 
 
 
 ## usersTable
 |Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, foreign_key: true|
+
 
 ### Association
 - has_many messages

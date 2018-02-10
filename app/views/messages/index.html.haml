@@ -1,20 +1,45 @@
 %header.header
   .header__nameplate
-    %h2 name
+    %ul
+      %li.name name
+      %li.icon.fa.fa-cog
+      %li.icon.fa.fa-edit
   .header__groupplate
     %h2 group-name
+    %form{:action => "###", :method => "###"}
+      .header__groupplate__btn
+        %input{:type => "submit", :class => "edit-btn", :value => "Edit"}
     %p member : name
 .contents
   .contents__groups
-    %h3 group-name1
-    %p test, test
-    %h3 group-name2
-    %p sample,sample
+    .contents__groups__box
+      %h3 group-name1
+      %p test, test
+    .contents__groups__box
+      %h3 group-name2
+      %p sample,sample
   .contents__main
-    %h3 name1
-    %p date
-    %p text,text,text
-    %h3 name2
-    %p date
-    %p sample,sample,sample
+    .contents__main__messagebox
+      .contents__main__messagebox__name
+        %ul
+          %li.name name1
+          %li.time= Time.now
+      %p text,text,text
+    .contents__main__messagebox
+      .contents__main__messagebox__name
+        %ul
+          %li.name name1
+          %li.time= Time.now
+      %p sample,sample,sample
     .contents__main__textbox
+      %form{:action => "###", :method => "###"}
+        .contents__main__textbox__cover
+          %input{:type => "text", :placeholder => "Type a messeage", :class => "textbox", :name => "message"}
+          %i.fa.fa-image
+        .contents__main__textbox__btn
+          %input{:type => "submit", :value => "Send", :class => "send--bottom"}
+
+
+
+
+

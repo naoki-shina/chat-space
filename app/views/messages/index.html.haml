@@ -10,22 +10,22 @@
   .header__groupplate
     .header__announcement
     %h2 group-name
-    %form{:action => "###", :method => "###"}
+    %form{action: "###", method: "###"}
       .header__groupplate__btn
-        %input{:type => "submit", :class => "edit-btn", :value => "Edit"}
+        %input{type: "submit", class: "edit-btn", value: "Edit"}
     %p member : name
 .contents
   =render "messages/group-plate"
   .contents__main
     =render "messages/message-plate"
     .contents__main__textbox
-      %form{:action => "###", :method => "###"}
+      %form{action: "###", method: "###"}
         .contents__main__textbox__cover
-          %input{:type => "text", :placeholder => "  Type a messeage", :class => "textbox", :name => "message"}
-          = button_tag(:type => "file") do
+          %input{type: "text", placeholder: "  Type a messeage", class: "textbox", name: "message"}
+          = button_tag(type: "file") do
             %i.fa.fa-image
         .contents__main__textbox__btn
-          %input{:type => "submit", :value => "Send", :class => "send--bottom"}
+          %input{type: "submit", value: "Send", class: "send--bottom"}
 
 
 

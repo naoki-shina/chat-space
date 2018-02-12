@@ -9,76 +9,73 @@ html, body {
   height: 120px;
   width: 100%;
   position: fixed;
-}
-
-.header__announcement {
-  height: 20px;
-  width: 100%;
-  background-color: $blue-bg;
-}
-
-.header__nameplate {
-  height: 100%;
-  width: 300px;
-  background-color: #253141;
-  float: left;
-  ul {
-    list-style: none;
-    padding-left: 20px;
-    padding-right: 20px;
-    li.name {
-      font-size: 16px;
-      font-weight: bold;
-      color: $white;
-      margin-top: 50px;
-      float: left;
-    }
-    i {
-      color: $white;
-      font-size: 16px;
-      float: right;
-      margin-top: 50px;
-    }
-    .fa-edit {
-      margin-right: 10px;
-    }
+    &__announcement {
+    height: 20px;
+    width: 100%;
+    background-color: $blue-bg;
   }
-}
-
-.header__groupplate {
-  height: 100%;
-  width: calc(100% - 300px);
-  background-color: white;
-  float: right;
-  position: absolute;
-  top: 0;
-  right: 0;
-  h2 {
-    font-size: 20px;
-    color: #333333;
-    padding-top: 35px;
-    padding-bottom: 15px;
-    padding-left: 40px;
+    &__nameplate {
+    height: 100%;
+    width: 300px;
+    background-color: #253141;
     float: left;
-  }
-  .header__groupplate__btn {
-    height: 40px;
-    width: 70px;
-    float: right;
-    border: solid 1px $blue-bg;
-    margin: 28px 40px 0 0;
-    .edit-btn{
-      height: 100%;
-      width: 100%;
-      color: $blue-bg;
-      border: none;
+    ul {
+      list-style: none;
+      padding-left: 20px;
+      padding-right: 20px;
+      li.name {
+        font-size: 16px;
+        font-weight: bold;
+        color: $white;
+        margin-top: 50px;
+        float: left;
+      }
+      i {
+        color: $white;
+        font-size: 16px;
+        float: right;
+        margin-top: 50px;
+      }
+      .fa-edit {
+        margin-right: 10px;
+      }
     }
   }
-  p {
-    font-size: 12px;
-    color: #999999;
-    padding-left: 40px;
-    clear: both;
+    &__groupplate {
+    height: 100%;
+    width: calc(100% - 300px);
+    background-color: white;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    h2 {
+      font-size: 20px;
+      color: #333333;
+      padding-top: 35px;
+      padding-bottom: 15px;
+      padding-left: 40px;
+      float: left;
+  }
+      &__btn {
+      height: 40px;
+      width: 70px;
+      float: right;
+      border: solid 1px $blue-bg;
+      margin: 28px 40px 0 0;
+      .edit-btn{
+        height: 100%;
+        width: 100%;
+        color: $blue-bg;
+        border: none;
+      }
+  }
+    p {
+      font-size: 12px;
+      color: #999999;
+      padding-left: 40px;
+      clear: both;
+    }
   }
 }
 
@@ -87,32 +84,28 @@ html, body {
   height: calc(100% - 120px);
   width: 100%;
   padding-top: 120px;
-}
-
-.contents__groups {
-  height: 100%;
-  width: 300px;
-  background-color: #2f3e51;
-  float: left;
-  .contents__groups__box {
-    h3 {
-      font-size: 15px;
-      color: $white;
-      padding-top: 20px;
-      padding-bottom: 5px;
-      padding-left: 20px;
-    }
-    p {
-      font-size: 11px;
-      color: $white;
-      padding-bottom: 40px;
-      padding-left: 20px;
+  &__groups {
+    height: 100%;
+    width: 300px;
+    background-color: #2f3e51;
+    float: left;
+    &__box {
+      h3 {
+        font-size: 15px;
+        color: $white;
+        padding-top: 20px;
+        padding-bottom: 5px;
+        padding-left: 20px;
+      }
+      p {
+        font-size: 11px;
+        color: $white;
+        padding-bottom: 40px;
+        padding-left: 20px;
+      }
     }
   }
-}
-
-
-.contents__main {
+  &__main {
   height: 100%;
   width: calc(100% - 300px);
   float: right;
@@ -120,7 +113,7 @@ html, body {
   position: relative;
   border-bottom: 1px solid;
   border-color: #eeeeee;
-  .contents__main__messagebox {
+    &__messagebox {
     padding-left: 40px;
     padding-top: 46px;
     ul {
@@ -143,34 +136,49 @@ html, body {
       color: $black;
       clear: left;
       padding-bottom: 40px;
+      }
     }
-  }
+    &__textbox {
+      height: 90px;
+      background-color: #aaaaaa;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      &__cover {
+        background-color: white;
+        float: left;
+        height: 50px;
+        width: 75%;
+        margin: 20px 0 0 40px;
+        .textbox {
+          height: 100%;
+          float: left;
+          width: 90%;
+          border: none;
+        }
+        .fa.fa-image {
+          font-size: 20px;
+          float: right;
+          margin: 15px 10px 10px 0;
+        }
+      }
+        &__btn {
+          float: right;
+          height: 50px;
+          width: 10%;
+          margin: 20px 40px 20px 15px;
+          background-color: $blue-bg;
+          .send--bottom {
+            color: white;
+            background-color: $blue-bg;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
 }
-
-.contents__main__textbox {
-  height: 90px;
-  background-color: #aaaaaa;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  .contents__main__textbox__cover {
-    background-color: white;
-    float: left;
-    height: 50px;
-    width: 75%;
-    margin: 20px 0 0 40px;
-    .textbox {
-      height: 100%;
-      float: left;
-      width: 90%;
-      border: none;
-    }
-    .fa.fa-image {
-      font-size: 20px;
-      float: right;
-      margin: 15px 10px 10px 0;
-    }
-  }
 
 button {
     width: auto;
@@ -182,21 +190,5 @@ button {
     line-height:0;
     overflow:visible;
     cursor:pointer;
-}
-
-  .contents__main__textbox__btn {
-    float: right;
-    height: 50px;
-    width: 10%;
-    margin: 20px 40px 20px 15px;
-    background-color: $blue-bg;
-    .send--bottom {
-      color: white;
-      background-color: $blue-bg;
-      text-align: center;
-      height: 100%;
-      width: 100%;
-    }
-  }
 }
 

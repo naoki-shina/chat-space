@@ -26,7 +26,7 @@
 
 
 
-##groupsTable
+## groupsTable
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, foreign_key: true|

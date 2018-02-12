@@ -1,41 +1,29 @@
 %header.header
   .header__nameplate
+    .header__announcement
     %ul
       %li.name name
-      %li.icon.fa.fa-cog
-      %li.icon.fa.fa-edit
+      = link_to root_path do
+        %i.fa.fa-cog
+      = link_to root_path do
+        %i.fa.fa-edit
   .header__groupplate
+    .header__announcement
     %h2 group-name
     %form{:action => "###", :method => "###"}
       .header__groupplate__btn
         %input{:type => "submit", :class => "edit-btn", :value => "Edit"}
     %p member : name
 .contents
-  .contents__groups
-    .contents__groups__box
-      %h3 group-name1
-      %p test, test
-    .contents__groups__box
-      %h3 group-name2
-      %p sample,sample
+  =render "messages/group-plate"
   .contents__main
-    .contents__main__messagebox
-      .contents__main__messagebox__name
-        %ul
-          %li.name name1
-          %li.time= Time.now
-      %p text,text,text
-    .contents__main__messagebox
-      .contents__main__messagebox__name
-        %ul
-          %li.name name1
-          %li.time= Time.now
-      %p sample,sample,sample
+    =render "messages/message-plate"
     .contents__main__textbox
       %form{:action => "###", :method => "###"}
         .contents__main__textbox__cover
-          %input{:type => "text", :placeholder => "Type a messeage", :class => "textbox", :name => "message"}
-          %i.fa.fa-image
+          %input{:type => "text", :placeholder => "  Type a messeage", :class => "textbox", :name => "message"}
+          = button_tag(:type => "file") do
+            %i.fa.fa-image
         .contents__main__textbox__btn
           %input{:type => "submit", :value => "Send", :class => "send--bottom"}
 

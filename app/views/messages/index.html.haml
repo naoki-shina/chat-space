@@ -6,11 +6,11 @@
         = current_user.name
       = link_to edit_user_path(current_user) do
         %i.fa.fa-cog
-      = link_to new_group_path do
+      = link_to new_groups_path do
         %i.fa.fa-edit
   .header__groupplate
     %h2 group-name
-    = link_to edit_group_path do
+    = link_to edit_groups_path do
       .header__groupplate__btn Edit
     %p member : name
 .contents

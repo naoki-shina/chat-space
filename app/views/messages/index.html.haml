@@ -6,14 +6,12 @@
         = current_user.name
       = link_to edit_user_path(current_user) do
         %i.fa.fa-cog
-      = link_to root_path do
+      = link_to new_group_path do
         %i.fa.fa-edit
   .header__groupplate
-    .header__announcement
     %h2 group-name
-    %form{action: "###", method: "###"}
-      .header__groupplate__btn
-        %input{type: "submit", class: "edit-btn", value: "Edit"}
+    = link_to edit_group_path do
+      .header__groupplate__btn Edit
     %p member : name
 .contents
   =render "messages/group-plate"

@@ -52,18 +52,21 @@ html, body {
       padding-left: 40px;
       float: left;
   }
-      &__btn {
-      height: 40px;
-      width: 70px;
+    &__btn {
+      height: 35px;
+      width: 65px;
       float: right;
       border: solid 1px $blue-bg;
-      margin: 28px 40px 0 0;
-      .edit-btn{
-        height: 100%;
-        width: 100%;
-        color: $blue-bg;
-        border: none;
-      }
+      margin: 30px 40px 0 0;
+      font-size: 18px;
+      text-align: center;
+      color: $blue-bg;
+      padding-top: 5px;
+      // #edit-btn{
+      //   color: $blue-bg;
+      //   text-align: center;
+      //   font-size: 20px;
+      // }
   }
     p {
       font-size: 12px;

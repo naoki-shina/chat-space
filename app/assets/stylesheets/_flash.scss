@@ -1,0 +1,17 @@
+.attention {
+  .notice {
+  background-color: $blue-bg;
+  color: $white;
+  text-align: center;
+  height: 20px;
+  width: 100%;
+  }
+
+  .alert {
+  background-color: $orange-bg;
+  color: $white;
+  text-align: center;
+  height: 20px;
+  width: 100%;
+  }
+}

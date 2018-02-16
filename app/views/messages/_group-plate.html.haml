@@ -1,8 +1,9 @@
 .contents__groups
   - current_user.groups.each do |group|
     .contents__groups__box
-      = link_to groups_messages_path(group) do
+      = link_to group_messages_path(group) do
         %h3
           =group.name
         %p
-          メッセージはまだありません。
+          = group.show_last_message
+

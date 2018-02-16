@@ -1,27 +1,22 @@
 %header.header
-  .header__nameplate
-    .header__announcement
-    %ul
-      %li.name
-        = current_user.name
-      = link_to edit_users_path(current_user) do
-        %i.fa.fa-cog
-      = link_to new_groups_path do
-        %i.fa.fa-edit
+  =render partial: "messages/name-plate"
   .header__groupplate
-    %h2 group-name
-    = link_to edit_groups_path do
+    %h2
+      = @group.name
+    = link_to edit_group_path(@group) do
       .header__groupplate__btn Edit
     %p member : name
 .contents
   =render "messages/group-plate"
   .contents__main
-    =render "messages/message-plate"
+    =render partial: "messages/message-plate", collection: @messages
     .contents__main__textbox
-      %form{action: "###", method: "###"}
+      .form
         .contents__main__textbox__cover
-          %input{type: "text", placeholder: "  Type a messeage", class: "textbox", name: "message"}
-          = button_tag(type: "file") do
-            %i.fa.fa-image
-        .contents__main__textbox__btn
-          %input{type: "submit", value: "Send", class: "send--bottom"}
+          =form_for [@group, @message] do |f|
+            = f.text_field :body, class: "textbox", placeholder: "  Type a message"
+            = f.label :image, class: "image" do
+              %fa.fa-image
+              =f.file_field :image
+            .contents__main__textbox__btn
+              = f.submit "Send", class: "send--button"

@@ -12,11 +12,11 @@
     =render partial: "messages/message-plate", collection: @messages
     .contents__main__textbox
       .form
-        .contents__main__textbox__cover
-          =form_for [@group, @message] do |f|
+        =form_for [@group, @message] do |f|
+          .contents__main__textbox__cover
             = f.text_field :body, class: "textbox", placeholder: "  Type a message"
             = f.label :image, class: "image" do
-              %fa.fa-image
-              =f.file_field :image
-            .contents__main__textbox__btn
-              = f.submit "Send", class: "send--button"
+              =f.file_field :image, class: "button"
+              %i.fa.fa-image
+          .contents__main__textbox__btn
+            = f.submit "Send", class: "send--button"

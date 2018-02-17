@@ -1,6 +1,11 @@
 .contents__main__messagebox
   .contents__main__messagebox__name
-    %ul
-      %li.name name1
-      %li.time= Time.now
-  %p text,text,text
+    .user_name
+      = message.user.name
+    .date
+      =format_posted_time(message.created_at)
+    .message
+      - if message.body.present?
+        %p.message__body
+          = message.body
+      =image_tag message.imgage.url, class"image" if message.image.present?

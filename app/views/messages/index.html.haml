@@ -9,7 +9,8 @@
 .contents
   =render "messages/group-plate"
   .contents__main
-    =render partial: "messages/message-plate", collection: @messages
+    - @messages.each do |message|
+      =render partial: "messages/message-plate", locals: {message: message}
     .contents__main__textbox
       .form
         =form_for [@group, @message] do |f|

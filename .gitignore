@@ -12,7 +12,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/config/database.yml
+config/database.yml
+*.jpg
 *.jpeg
 *.png
 /node_modules

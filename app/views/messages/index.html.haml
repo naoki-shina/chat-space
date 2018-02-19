@@ -1,28 +1,23 @@
 %header.header
-  .header__nameplate
-    .header__announcement
-    %ul
-      %li.name name
-      = link_to root_path do
-        %i.fa.fa-cog
-      = link_to root_path do
-        %i.fa.fa-edit
+  =render partial: "messages/name-plate"
   .header__groupplate
-    .header__announcement
-    %h2 group-name
-    %form{action: "###", method: "###"}
-      .header__groupplate__btn
-        %input{type: "submit", class: "edit-btn", value: "Edit"}
+    %h2
+      = @group.name
+    = link_to edit_group_path(@group) do
+      .header__groupplate__btn Edit
     %p member : name
 .contents
   =render "messages/group-plate"
   .contents__main
-    =render "messages/message-plate"
+    - @messages.each do |message|
+      =render partial: "messages/message-plate", locals: {message: message}
     .contents__main__textbox
-      %form{action: "###", method: "###"}
-        .contents__main__textbox__cover
-          %input{type: "text", placeholder: "  Type a messeage", class: "textbox", name: "message"}
-          = button_tag(type: "file") do
-            %i.fa.fa-image
-        .contents__main__textbox__btn
-          %input{type: "submit", value: "Send", class: "send--bottom"}
+      .form
+        =form_for [@group, @message] do |f|
+          .contents__main__textbox__cover
+            = f.text_field :body, class: "textbox", placeholder: "  Type a message"
+            = f.label :image, class: "image" do
+              =f.file_field :image, class: "button"
+              %i.fa.fa-image
+          .contents__main__textbox__btn
+            = f.submit "Send", class: "send--button"

@@ -1,0 +1,9 @@
+.header__nameplate
+  .header__announcement
+  %ul
+    %li.name
+      = current_user.name
+    = link_to edit_users_path(current_user) do
+      %i.fa.fa-cog
+    = link_to new_group_path do
+      %i.fa.fa-edit

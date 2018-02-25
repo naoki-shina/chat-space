@@ -30,7 +30,6 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.contents__main__ajax').append(html);
-      // $('.message__body').remove()
       $('.textbox').val('');
       $('#textImage').val('');
       $('html,body').animate({scrollTop: $('.contents__main__ajax').height()}, 500, 'swing');

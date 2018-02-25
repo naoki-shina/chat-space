@@ -6,14 +6,17 @@
     = link_to edit_group_path(@group) do
       .header__groupplate__btn Edit
     %p member : name
+
 .contents
   =render "messages/group-plate"
+
   .contents__main
-    - @messages.each do |message|
-      =render partial: "messages/message-plate", locals: {message: message}
+    .contents__main__ajax
+      - @messages.each do |message|
+        =render partial: "messages/message-plate", locals: {message: message}
     .contents__main__textbox
       .form
-        =form_for [@group, @message] do |f|
+        =form_for [@group, @message], html:{id: "textImage"} do |f|
           .contents__main__textbox__cover
             = f.text_field :body, class: "textbox", placeholder: "  Type a message"
             = f.label :image, class: "image" do

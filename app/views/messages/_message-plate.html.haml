@@ -1,11 +1,9 @@
-.contents__main__messagebox
-  / - @messages.each do |message|
+.contents__main__ajax__messagebox
   .user_name
     = message.user.name
   .date
     = message.created_at
   .message
-    - if message.body.present?
-      %p.message__body
-        = message.body
+    %p.message__body
+      = message.body
     =image_tag message.image.url, class: "image" if message.image.present?

@@ -1,6 +1,5 @@
 $(function() {
   function buildHTML(message) {
-    console.log(message)
     var html =
 `<div class="contents__main__ajax__messagebox">
   <div class="user_name">
@@ -10,8 +9,11 @@ $(function() {
   ${message.created_at}
   </div>
   <div class="message">
-    ${(message.body == null)? "" : `<p class="message__body">${message.body}</p>`}
+    <p class="message__body">
+    ${message.body}
+    </p>
     ${(message.image == null)? "" : `<img src="${message.image}" class="image">`}
+  </div>
 </div>`
     return html;
   };

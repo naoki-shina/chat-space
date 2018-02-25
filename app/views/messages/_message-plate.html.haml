@@ -4,6 +4,7 @@
   .date
     = message.created_at
   .message
-    %p.message__body
-      = message.body
+    - if message.body.present?
+      %p.message__body
+        = message.body
     =image_tag message.image.url, class: "image" if message.image.present?

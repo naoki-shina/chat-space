@@ -5,7 +5,13 @@
       = @group.name
     = link_to edit_group_path(@group) do
       .header__groupplate__btn Edit
-    %p member : name
+  .header__memberplate
+    %ul.header__memberplate__mambers
+      %li.header__memberplate__members__per
+        Members :
+    - @group.users.each do |user|
+      %li.header__memberplate__members__per
+        = user.name
 
 .contents
   =render "messages/group-plate"

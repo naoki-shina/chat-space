@@ -53,7 +53,7 @@ html, body {
       padding-bottom: 15px;
       padding-left: 40px;
       float: left;
-  }
+    }
     &__btn {
       height: 35px;
       width: 65px;
@@ -64,13 +64,22 @@ html, body {
       text-align: center;
       color: $blue-bg;
       padding-top: 5px;
-
+    }
   }
-    p {
-      font-size: 12px;
-      color: #999999;
-      padding-left: 40px;
-      clear: both;
+  &__memberplate {
+    position: absolute;
+    left: 340px;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    &__members {
+      &__per {
+        float: left;
+        font-size: 12px;
+        color: #999999;
+        list-style: none;
+        padding-right: 10px;
+      }
     }
   }
 }

@@ -1,8 +1,8 @@
 $(function() {
-  var list_name = $('.chat-group-user__name')
+  var list_name = $('.chat-group-user')
 
   function appendUser(user) {
-    var html = `<div class="chat-group-user chat-group-user__line clearfix">
+    var html = `<div class="chat-group-user clearfix">
     <p class="chat-group-user__name">${user.name}</p>
     <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${user.id} data-user-name=${user.name}>追加</a>
     </div>`
@@ -50,7 +50,7 @@ $(function() {
     $(this).parent().remove();
     appendAddUser(id, name);
   });
-  $('.chat-group-user').on('click', '.js-remove-btn', function() {
+  $('.chat-group-user, #chat-group-users').on('click', '.js-remove-btn', function() {
     $(this).parent().remove();
   });
 });

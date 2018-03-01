@@ -23,13 +23,12 @@
       .chat-group-form__field--left
         %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
       .chat-group-form__field--right
-        .chat-group-user.clearfix.js-chat-memer#chat-group-user-8
         #chat-group-users
-          #input{name: 'chat_group[user_ids][]', type: 'hidden', value: current_user.id}
-          %p.chat-group-user__name
-            = current_user.name
-          %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
-            削除
+          .chat-group-user.clearfix.js-chat-memer#chat-group-user-8
+            %input{ name: "group[current_user.ids][]", type: "hidden", value: "current_user.id"}/
+            %p.chat-group-user__name
+              = current_user.name
+
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right

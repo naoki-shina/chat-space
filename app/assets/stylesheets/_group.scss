@@ -77,11 +77,13 @@
     }
   }
 
-  .chat-group-user {
+  .chat-group-user, #chat-group-users {
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    width: 600px;
+    float: right;
     &:after {
       content: "";
       clear: both;
@@ -115,3 +117,9 @@
     border: 0;
   }
 }
+
+.chat-group-user__line {
+  width: 100%;
+}
+
+

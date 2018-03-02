@@ -187,7 +187,9 @@ html, body {
         float: right;
         height: 50px;
         width: 10%;
-        margin: 20px 40px 20px 15px;
+        margin: 20px 0;
+        position: absolute;
+        right: 5%;
         .send--button {
           border: none;
           cursor: pointer;

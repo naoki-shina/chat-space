@@ -1,7 +1,7 @@
 $(function() {
   function buildHTML(message) {
     var html =
-`<div class="contents__main__ajax__messagebox">
+`<div class="contents__main__ajax__messagebox" data-message-id="${message.id}">
   <div class="user_name">
   ${message.user_name}
   </div>
@@ -42,37 +42,39 @@ $(function() {
     });
   });
 
-
-
-  function update() {
-    var message_id = $('.messages:last').data('id');
+// Auto updationg
+  function update(){
+    if ($('.contents__main__ajax__messagebox')[0]){
+      var lastMessageId = $('.contents__main__ajax__messagebox:last').data('message-id');
+    } else {
+      var lastMessageId = 0
+    }
     $.ajax({
       url: location.href,
-      type: 'GET',
-      data: {
-        message: { id: message_id }
-      },
+      type: "GET",
+      data: { id: "message-id" },
       dataType: 'json'
     })
-    .done(function(data) {
-      $.each(data, function(i, data) {
-        var html = buildHTML(data);
-        $('.contents__main__ajax').append(html);
-        $('html,body').animate({scrollTop: $('.contents__main__ajax').height()}, 500, 'swing');
+    .done(function(messages) {
+      console.log(messages);
+      messages.forEach(function(message) {
+        if (message.id > lastMessageId ) {
+          var html =buildHTML(message);
+          $('.contents__main__ajax').append(html);
+          $('html,body').animate({scrollTop: $('.contents__main__ajax').height()}, 500, 'swing');
+        }
       });
-    });
-    if($('.messages')[0]){
-      var message_id = $('.messages:last').data('id');
-    } else {
-      var message_id = 0
-    }
+    })
+    .fail(function() {
+      alert('自動更新に失敗しました');
+    })
   }
 
   $(function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-      var interval = setInterval(update, 50000);
+      var interval = setInterval(update, 5000);
     } else {
-      clearInterval(interval)
-    };
-  });
+      clearInterval(interval);
+    }
+  })
 });

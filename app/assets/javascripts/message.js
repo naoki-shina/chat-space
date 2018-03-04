@@ -56,7 +56,6 @@ $(function() {
       dataType: 'json'
     })
     .done(function(messages) {
-      console.log(messages);
       messages.forEach(function(message) {
         if (message.id > lastMessageId ) {
           var html =buildHTML(message);

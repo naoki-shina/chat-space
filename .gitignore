@@ -13,7 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 config/database.yml
-*.jpg
+
 *.jpeg
 *.png
 /node_modules

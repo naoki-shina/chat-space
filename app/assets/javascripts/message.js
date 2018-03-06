@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   function buildHTML(message) {
     var html =
 `<div class="contents__main__ajax__messagebox" data-message-id="${message.id}">

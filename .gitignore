@@ -20,3 +20,6 @@ config/database.yml
 /yarn-error.log
 
 .byebug_history
+
+config/secrets.yml
+config/deploy.rb

@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function() {
     '<p class="message__body">' +
     message.body +
     '</p>' +
-    ${(message.image == null)? "" : '<img src=' + message.image + 'class="image">'} +
+    message.image == null? "" : + '<img src=' + message.image + 'class="image">' +
   '</div>' +
 '</div>'
     return html;

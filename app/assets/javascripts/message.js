@@ -1,20 +1,20 @@
 $(document).on('turbolinks:load', function() {
   function buildHTML(message) {
     var html =
-`<div class="contents__main__ajax__messagebox" data-message-id="${message.id}">
-  <div class="user_name">
-  ${message.user_name}
-  </div>
-  <div class="date">
-  ${message.created_at}
-  </div>
-  <div class="message">
-    <p class="message__body">
-    ${message.body}
-    </p>
-    ${(message.image == null)? "" : `<img src="${message.image}" class="image">`}
-  </div>
-</div>`
+'<div class="contents__main__ajax__messagebox"' + 'data-message-id=' + message.id + '>' +
+  '<div class="user_name">' +
+  message.user_name +
+  '</div>' +
+  '<div class="date">'
+  message.created_at +
+  '</div>' +
+  '<div class="message">' +
+    '<p class="message__body">' +
+    message.body +
+    '</p>' +
+    ${(message.image == null)? "" : '<img src=' + message.image + 'class="image">'} +
+  '</div>' +
+'</div>'
     return html;
   };
   $('#textImage').on('submit', function(e){

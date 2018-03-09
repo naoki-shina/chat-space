@@ -2,4 +2,5 @@
   "name": "chat-space",
   "private": true,
   "dependencies": {}
+  "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony"
 }
